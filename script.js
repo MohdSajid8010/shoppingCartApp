@@ -47,6 +47,12 @@ document.getElementById("profile").addEventListener("click",()=>{
 
 
   document.querySelector("#my-icon").addEventListener("click",()=>{
+    if (document.querySelector("#my-icon").innerText == "menu") {
+        document.querySelector("#my-icon").innerText = "close"
+      } else {
+        document.querySelector("#my-icon").innerText = "menu"
+    
+      }
     document.querySelector(".nav-left").classList.toggle("nav-left2");
    
   })

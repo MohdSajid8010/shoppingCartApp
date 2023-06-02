@@ -60,6 +60,12 @@ document.getElementById("rzp-button1").onclick = function (e) {
 
 // image:"https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg",
 document.querySelector("#my-icon").addEventListener("click",()=>{
+  if (document.querySelector("#my-icon").innerText == "menu") {
+    document.querySelector("#my-icon").innerText = "close"
+  } else {
+    document.querySelector("#my-icon").innerText = "menu"
+
+  }
   document.querySelector(".nav-left").classList.toggle("nav-left2");
  
 })

@@ -11,18 +11,18 @@
 
 
 
-let user_arr = JSON.parse(localStorage.getItem("user_arr"))||[];
-let curr_user = JSON.parse(localStorage.getItem("curr_user"))||[];
+let user_arr = JSON.parse(localStorage.getItem("user_arr")) || [];
+let curr_user = JSON.parse(localStorage.getItem("curr_user")) || [];
 
 function z() {
-    if (!user_arr||user_arr.length==0) {
-        alert("Sign up first!")
-       location.href="../signUp/sign-up.html"
-    }else
-    if (!curr_user||curr_user.length==0) {
-        alert("Login First!");
-       location.href="../login/login.html"
-    } 
+  if (!user_arr || user_arr.length == 0) {
+    alert("Sign up first!")
+    location.href = "../signUp/sign-up.html"
+  } else
+    if (!curr_user || curr_user.length == 0) {
+      alert("Login First!");
+      location.href = "../login/login.html"
+    }
 
 }
 z();
@@ -335,19 +335,25 @@ function remove_checkbox() {
 
 
 
-document.querySelector("#my-icon").addEventListener("click",()=>{
+document.querySelector("#my-icon").addEventListener("click", () => {
+
+  if (document.querySelector("#my-icon").innerText == "menu") {
+    document.querySelector("#my-icon").innerText = "close"
+  } else {
+    document.querySelector("#my-icon").innerText = "menu"
+
+  }
   document.querySelector(".nav-left").classList.toggle("nav-left2");
- 
+
 })
 
 
-document.getElementById("fold").addEventListener("click",()=>{
- 
-  if(document.getElementById("fold").innerText=="unfold_less")
-  {
-    document.getElementById("fold").innerText="unfold_more"
-  }else{
-    document.getElementById("fold").innerText="unfold_less"
+document.getElementById("fold").addEventListener("click", () => {
+
+  if (document.getElementById("fold").innerText == "unfold_less") {
+    document.getElementById("fold").innerText = "unfold_more"
+  } else {
+    document.getElementById("fold").innerText = "unfold_less"
   }
   document.querySelector("aside").classList.toggle("filter-leftbar");
 
