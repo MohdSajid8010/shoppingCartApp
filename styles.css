@@ -138,4 +138,41 @@ img{
 #sighupBtn{
     padding: 8px 18px;
 }
-}
+} 
+
+
+
+/*
+
+
+
+
+#my-icon {
+    display: none;
+  }
+  
+  
+  #my-icon:hover {
+    cursor: pointer;
+  }
+  @media (max-width:600px)
+  {
+      .nav-left{
+          display: none;
+      }
+      #my-icon {
+        display: block;
+      }
+  
+      .nav-left2{
+        position: absolute;
+        display: flex;
+        flex-flow: column wrap;
+        background-color: black;
+        border-bottom-left-radius: 15px;
+        right: 0px;
+        top: 60px;
+        gap: 15px;
+        padding: 20px 10px;
+        align-items: flex-start;
+    }*/

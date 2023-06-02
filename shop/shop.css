@@ -477,7 +477,7 @@ img {
 
   #fold {
     display: block !important;
-  animation: horizontal 3s ease-in-out infinite;
+    animation: horizontal 3s ease-in-out infinite;
 
   }
 

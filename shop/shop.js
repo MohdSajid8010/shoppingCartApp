@@ -343,7 +343,6 @@ document.querySelector("#my-icon").addEventListener("click",()=>{
 
 document.getElementById("fold").addEventListener("click",()=>{
  
-  // fold
   if(document.getElementById("fold").innerText=="unfold_less")
   {
     document.getElementById("fold").innerText="unfold_more"
