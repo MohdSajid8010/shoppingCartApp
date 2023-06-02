@@ -161,20 +161,16 @@ main-content .active {
 }
 
 .grid-container{
-  border: 1px solid red;
   margin-top: 40px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 30px;
-  /* display: none; */
 
   padding-bottom: 100px;
 
 }
 .item{
   display: flex;
-  /* border: 1px solid red; */
-  /* box-shadow: 0px 0px 20px grey; */
   outline: 2px solid grey;
   border-radius: 8px;
   flex-flow: column wrap;
@@ -190,14 +186,12 @@ main-content .active {
 }
 .row1{
   display: flex;
-  /* border: 1px solid red; */
   justify-content: space-between;
   padding: 5px;
 
 }
 .colors{
   display: flex;
-  /* border: 1px solid red; */
   padding: 5px;
   align-items: center;
 
@@ -239,7 +233,7 @@ padding: 5px;
   cursor: pointer;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  /* transition-duration: 0.5s; */
+  transition-duration: 0.5s;
 }
 
 .button-anim{
