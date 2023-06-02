@@ -339,3 +339,17 @@ document.querySelector("#my-icon").addEventListener("click",()=>{
   document.querySelector(".nav-left").classList.toggle("nav-left2");
  
 })
+
+
+document.getElementById("fold").addEventListener("click",()=>{
+ 
+  // fold
+  if(document.getElementById("fold").innerText=="unfold_less")
+  {
+    document.getElementById("fold").innerText="unfold_more"
+  }else{
+    document.getElementById("fold").innerText="unfold_less"
+  }
+  document.querySelector("aside").classList.toggle("filter-leftbar");
+
+})
