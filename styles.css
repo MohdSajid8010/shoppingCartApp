@@ -1,4 +1,3 @@
-/* Write styles here */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -25,15 +24,18 @@ nav {
     top: 0;
     font-size: 17px;
 }
+
 nav .brand {
     font-size: 1.5rem;
     font-weight: bold;
-  }
-nav a{
+}
+
+nav a {
     color: white;
     text-decoration: none;
 
 }
+
 .nav-left {
     display: flex;
     flex-flow: row wrap;
@@ -43,7 +45,8 @@ nav a{
 .nav-left div {
     cursor: pointer;
 }
-.containet1{
+
+.containet1 {
     margin-top: 60px;
     height: 200px;
     display: flex;
@@ -52,6 +55,7 @@ nav a{
     justify-content: space-evenly;
     padding-left: 20px;
 }
+
 button {
     background-color: black;
     color: white;
@@ -61,7 +65,8 @@ button {
     border-radius: 2px;
 
 }
-#sighupBtn{
+
+#sighupBtn {
     background-color: white;
     border: 2px solid black;
     padding: 9px 38px;
@@ -69,7 +74,8 @@ button {
     color: black;
     margin-left: 10px;
 }
-.img-contaner{
+
+.img-contaner {
     /* border: 2px solid red; */
     position: absolute;
     top: 110px;
@@ -77,21 +83,29 @@ button {
     z-index: -1;
 
 }
-img{
+
+img {
     /* border: 2px solid blue; */
     width: 900px;
 
 }
 
+@media (max-width:1120px) {
 
-@media (max-width:920px)
-{
-    img{
+    .img-contaner {
+        /* border: 1px solid red; */
+        top: 140px;
+    }
+}
+
+@media (max-width:920px) {
+    img {
         width: 110vw;
         height: auto;
-    
+
     }
-    .img-contaner{
+
+    .img-contaner {
         /* border: 1px solid red; */
         top: 260px;
     }
@@ -101,44 +115,46 @@ img{
 
 
 #my-icon {
-  display: none;
+    display: none;
 }
 
 
 #my-icon:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
-@media (max-width:600px)
-{
-    .nav-left{
+
+@media (max-width:600px) {
+    .nav-left {
         display: none;
     }
+
     #my-icon {
-      display: block;
+        display: block;
     }
 
-    .nav-left2{
-      position: absolute;
-      display: flex;
-      flex-flow: column wrap;
-      background-color: black;
-      border-bottom-left-radius: 15px;
-      right: 0px;
-      top: 60px;
-      gap: 15px;
-      padding: 20px 10px;
-      align-items: flex-start;
-  }
+    .nav-left2 {
+        position: absolute;
+        display: flex;
+        flex-flow: column wrap;
+        background-color: black;
+        border-bottom-left-radius: 15px;
+        right: 0px;
+        top: 60px;
+        gap: 15px;
+        padding: 20px 10px;
+        align-items: flex-start;
+    }
 
-  button {
-    padding: 10px 20px;
-    border-radius: 4px;
+    button {
+        padding: 10px 20px;
+        border-radius: 4px;
 
+    }
+
+    #sighupBtn {
+        padding: 8px 18px;
+    }
 }
-#sighupBtn{
-    padding: 8px 18px;
-}
-} 
 
 
 

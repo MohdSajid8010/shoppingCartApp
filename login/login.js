@@ -1,3 +1,5 @@
+import handleMenuClick from "../handleMenuClick.js";
+
 let EmailEl = document.getElementById("Email");
 let PassEl = document.getElementById("Pass");
 
@@ -31,7 +33,7 @@ document.getElementById("LoginBtn").addEventListener("click", () => {
         alert("Please enter correct email or password.");
     } else {
         curr_user["token"] = generateToken()
-        localStorage.setItem("curr_user", JSON.stringify(curr_user))
+        localStorage.setItem("curr_user", JSON.stringify(curr_user))//set the curr_user object
         location.href = "../shop/shop.html"
     }
 
@@ -46,7 +48,7 @@ function generateToken() {
     let token = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyz!@#$^&*/_?[}]{";
     for (let i = 0; i < 16; i++) {
-        token = token + str[Math.floor(Math.random() * str.length)];
+        token = token + str[Math.floor(Math.random() * str.length)];//str[randomIndex]
     }
     return token;
 }
@@ -75,13 +77,6 @@ document.querySelector("#myCart").addEventListener("click", () => {
     }
 })
 
-document.querySelector("#my-icon").addEventListener("click",()=>{
-    if (document.querySelector("#my-icon").innerText == "menu") {
-        document.querySelector("#my-icon").innerText = "close"
-      } else {
-        document.querySelector("#my-icon").innerText = "menu"
-    
-      }
-    document.querySelector(".nav-left").classList.toggle("nav-left2");
-   
-  })
+
+
+document.querySelector("#my-icon").addEventListener("click", handleMenuClick)

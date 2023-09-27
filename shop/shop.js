@@ -8,12 +8,15 @@
 //   rating: { rate: 3.9, count: 120 },
 // };
 
+// import handleMenuClick from "../handleMenuClick.js";
+
 
 
 
 let user_arr = JSON.parse(localStorage.getItem("user_arr")) || [];
 let curr_user = JSON.parse(localStorage.getItem("curr_user")) || [];
 
+//protect 
 function z() {
   if (!user_arr || user_arr.length == 0) {
     alert("Sign up first!")
@@ -89,6 +92,7 @@ fetch_data()
 
 let gridcontainer = document.querySelector(".grid-container")
 function show_products(arr) {
+
   gridcontainer.innerHTML = "";
   arr.forEach((obj) => {
     gridcontainer.innerHTML += ` <div class="item">
@@ -312,6 +316,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
 
 
   show_products(my_filtered_arr);
+  handleFold()
 
 })
 
@@ -335,8 +340,8 @@ function remove_checkbox() {
 
 
 
-document.querySelector("#my-icon").addEventListener("click", () => {
-
+document.querySelector("#my-icon").addEventListener("click", handleMenuClick)
+function handleMenuClick() {
   if (document.querySelector("#my-icon").innerText == "menu") {
     document.querySelector("#my-icon").innerText = "close"
   } else {
@@ -345,10 +350,11 @@ document.querySelector("#my-icon").addEventListener("click", () => {
   }
   document.querySelector(".nav-left").classList.toggle("nav-left2");
 
-})
+}
 
+document.getElementById("fold").addEventListener("click", handleFold)
 
-document.getElementById("fold").addEventListener("click", () => {
+function handleFold() {
 
   if (document.getElementById("fold").innerText == "unfold_less") {
     document.getElementById("fold").innerText = "unfold_more"
@@ -357,4 +363,4 @@ document.getElementById("fold").addEventListener("click", () => {
   }
   document.querySelector("aside").classList.toggle("filter-leftbar");
 
-})
+}

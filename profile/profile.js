@@ -1,4 +1,5 @@
-// Write your script here
+import handleMenuClick from "../handleMenuClick.js";
+
 let fnameEl = document.getElementById("fname");
 let lnameEl = document.getElementById("lname");
 let OldPasswEl = document.getElementById("OldPassw");
@@ -9,12 +10,14 @@ let savwInfoBtn = document.getElementById("savwInfoBtn");
 let ChangePasswordBtn = document.getElementById("ChangePasswordBtn");
 let LogoutBtn = document.getElementById("LogoutBtn");
 
-let user_arr = JSON.parse(localStorage.getItem("user_arr"));
+let user_arr = JSON.parse(localStorage.getItem("user_arr")) || [];
 let curr_user = JSON.parse(localStorage.getItem("curr_user"));
 
+//guard
 function z() {
-    if (!user_arr) {
+    if (!user_arr || user_arr.legth == 0) {
         alert("Sign up first!")
+        location.href = "../signUp/sign-up.html"
         return;
     }
     if (curr_user) {
@@ -22,6 +25,7 @@ function z() {
         lnameEl.value = curr_user.lname
     } else {
         alert("curr user not found, Login First!");
+        location.href = "../login/login.html"
         return;
     }
 
@@ -40,7 +44,7 @@ savwInfoBtn.addEventListener("click", () => {
     if (!user_arr) {
         alert("user not found.")
     } else {
-
+        //update the profile
         user_arr.forEach(obj => {
             if (obj.email == curr_user.email) {
                 obj["fname"] = fnameEl.value;
@@ -84,6 +88,7 @@ ChangePasswordBtn.addEventListener("click", () => {
     if (!user_arr) {
         alert("users not found!")
     } else {
+        //update the password
         user_arr.forEach((obj) => {
             if (obj.email == curr_user.email) {
                 obj["password"] = NewPassEl.value;
@@ -116,14 +121,6 @@ LogoutBtn.addEventListener("click", () => {
     }
 })
 
-document.querySelector("#my-icon").addEventListener("click",()=>{
-    if (document.querySelector("#my-icon").innerText == "menu") {
-        document.querySelector("#my-icon").innerText = "close"
-      } else {
-        document.querySelector("#my-icon").innerText = "menu"
-    
-      }
-    document.querySelector(".nav-left").classList.toggle("nav-left2");
-   
-  })
+
+document.querySelector("#my-icon").addEventListener("click", handleMenuClick)
 

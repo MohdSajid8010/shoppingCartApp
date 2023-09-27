@@ -135,6 +135,8 @@ main-content input {
   width: 100%;
   position: relative;
   font-size: 1rem;
+  outline: none;
+  border: 2px solid black;
 }
 
 .icon-cont {
@@ -145,7 +147,7 @@ main-content input {
 .myIconn {
   position: absolute;
   font-size: 31px !important;
-  top: 7px;
+  top: 8px;
   left: 6px;
 }
 

@@ -1,6 +1,8 @@
 // Link for the documentation:
 // https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration
 
+import handleMenuClick from "../handleMenuClick.js";
+
 // Add button code documentation:
 // https://razorpay.com/docs/payments/payment-gateway/web-integration/standard/build-integration#code-to-add-pay-button
 
@@ -15,7 +17,7 @@ function get_total_price(cart_arr) {
   cart_arr.forEach((obj) => {
     sum = sum + parseFloat(obj.price);
   })
-    return sum==0? 1:sum; //convert price from doller to Rs (1 United States Dollar equals 82.46 Indian Rupee)
+  return sum == 0 ? 1 : sum; //convert price from doller to Rs (1 United States Dollar equals 82.46 Indian Rupee)
 
 }
 
@@ -38,8 +40,8 @@ document.getElementById("rzp-button1").onclick = function (e) {
   localStorage.removeItem("cart_arr")
 
   document.querySelector(".thank").style.display = "block"
-  let name=curr_user.fname.toUpperCase()+" "+curr_user.lname.toUpperCase()
-  document.querySelector("h3").innerText=`${name}`
+  let name = curr_user.fname.toUpperCase() + " " + curr_user.lname.toUpperCase()
+  document.querySelector("h3").innerText = `${name}`
 
   document.querySelector("h3").style.display = "block"
 
@@ -59,13 +61,4 @@ document.getElementById("rzp-button1").onclick = function (e) {
 //Key Secret  f4SKNbLLKf0AA44QpLxWE3Q6
 
 // image:"https://www.mintformations.co.uk/blog/wp-content/uploads/2020/05/shutterstock_583717939.jpg",
-document.querySelector("#my-icon").addEventListener("click",()=>{
-  if (document.querySelector("#my-icon").innerText == "menu") {
-    document.querySelector("#my-icon").innerText = "close"
-  } else {
-    document.querySelector("#my-icon").innerText = "menu"
-
-  }
-  document.querySelector(".nav-left").classList.toggle("nav-left2");
- 
-})
+document.querySelector("#my-icon").addEventListener("click", handleMenuClick)

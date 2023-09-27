@@ -1,5 +1,3 @@
-/* Write your styles here */
-/* Write styles here */
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
@@ -59,7 +57,7 @@ button {
     outline: none;
     border-radius: 2px;
     font-weight: 600;
-
+    cursor: pointer;
 }
 
 input {

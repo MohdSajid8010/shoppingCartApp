@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Profile</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./profile.css"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  </head>
-  <body>
-    
-    <nav>
-      <div class="brand">
-        <a href="">MeShop.</a>
-      </div>
-      <div class="nav-left">
-        <div><a href="../index.html">Home</a></div>
-        <div id="login"><a href="../login/login.html">Login</a></div>
-        <div id="sign_up"><a href="../signUp/sign-up.html">Signup</a></div>
-        <div><a href="../cart/mycart.html">My Cart</a></div>
-        <div id="profile"><a href="../profile/profile.html">Profile</a></div>
-      </div>
-      <span class="material-icons"id="my-icon">menu</span>
-    </nav>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Profile</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./profile.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <div class="container1">
-      <h1>My Profile</h1>
+</head>
+
+<body>
+
+  <nav>
+    <div class="brand">
+      <a href="">MeShop.</a>
+    </div>
+    <div class="nav-left">
+      <div><a href="../index.html">Home</a></div>
+      <div id="login"><a href="../login/login.html">Login</a></div>
+      <div id="sign_up"><a href="../signUp/sign-up.html">Signup</a></div>
+      <div><a href="../cart/mycart.html">My Cart</a></div>
+      <div id="profile"><a href="../profile/profile.html">Profile</a></div>
+    </div>
+    <span class="material-icons" id="my-icon">menu</span>
+  </nav>
+
+  <div class="container1">
+    <h1>My Profile</h1>
     <input type="text" placeholder="First Name" id="fname" required>
     <input type="text" placeholder="Last Name" id="lname" required>
     <button id="savwInfoBtn">Save Info</button>
@@ -40,8 +42,9 @@
 
     <button id="ChangePasswordBtn">Change Password</button>
     <button id="LogoutBtn">Logout</button>
-    </div>
+  </div>
 
-    <script src="./profile.js" ></script>
-  </body>
+  <script type="module" src="./profile.js"></script>
+</body>
+
 </html>
