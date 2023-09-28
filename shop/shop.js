@@ -129,6 +129,7 @@ function add_in_cart(el, id) {
     if (obj.id == id) {
       let cart_arr = localStorage.getItem("cart_arr");
 
+      // if it is first time
       if (!cart_arr) {
         cart_arr = [obj];
       } else {
@@ -166,6 +167,7 @@ let allFilter = document.querySelectorAll(".filter")//target all filter class el
 
 //filter by Men,WomenJwellary,Electronics
 allFilter.forEach((el) => {
+  //access one btn
 
   el.addEventListener("click", (e) => {//e.target  and el are same element
     remove_checkbox()
@@ -173,8 +175,8 @@ allFilter.forEach((el) => {
     remove_active_class()
     e.target.classList.add("active")
 
-    el.classList.add("button-anim")
-    setTimeout(() => el.classList.remove("button-anim"), 700)
+    el.classList.add("button-anim")//add btn animation
+    setTimeout(() => el.classList.remove("button-anim"), 700)//remove btn animation
 
     console.log(e.target.textContent);
     if (e.target.textContent == "All") {
@@ -197,6 +199,7 @@ allFilter.forEach((el) => {
 
 function filter_the_product(mycategory) {
   let filter_arr = product_arr.filter((obj) => obj.category == mycategory);
+
   show_products(filter_arr);
 
 }
@@ -270,6 +273,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
 
     let ct = 0;
     if (myobj.mycolor.length == 0) {
+      // if user did not select color
       ct++
     } else
       if (myobj.mycolor.includes(obj.color[0]) || myobj.mycolor.includes(obj.color[1]) || myobj.mycolor.includes(obj.color[2])) {
@@ -278,6 +282,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
 
 
     if (myobj.mysize.length == 0) {
+      // if user did not select size
       ct++;
     } else
       if (myobj.mysize.includes(obj.size[0]) || myobj.mysize.includes(obj.size[1]) || myobj.mysize.includes(obj.size[2])) {
@@ -285,6 +290,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
       }
 
     if (myobj.myprice.length == 0) {
+      // if user did not select price
       ct++;
     } else {
       for (let i = 0; i < myobj.myprice.length; i++) {
@@ -300,6 +306,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
 
 
     if (myobj.myrating == 0) {
+      // if user did not select rating
       ct++;
     } else if (myobj.myrating == Math.floor(obj.rating.rate)) {
       ct++;
@@ -317,6 +324,7 @@ document.getElementById("apply_filter").addEventListener("click", () => {
 
   show_products(my_filtered_arr);
   handleFold()
+  if (my_filtered_arr.length == 0) { return gridcontainer.innerHTML = "oops! no product found, try different filter"; }
 
 })
 
