@@ -4,14 +4,11 @@ let curr_user = JSON.parse(localStorage.getItem("curr_user"));
 
 //chech authorization
 function z() {
-    if (!user_arr) {
-        alert("Sign up first!")
-        location.href = "../signUp/sign-up.html"
-    } else
-        if (!curr_user) {
-            alert("Login First!");
-            location.href = "../login/login.html"
-        }
+
+    if (!curr_user) {
+        alert("Login First!");
+        location.href = "../login/login.html"
+    }
 
 }
 z();
@@ -22,11 +19,8 @@ let rowsEl = document.querySelector(".rows");
 let lastrowEl = document.querySelector(".last-row");
 
 function get_total_price(cart_arr) {
-    let sum = 0;
-    cart_arr.forEach((obj) => {
-        sum = sum + parseFloat(obj.price);
-        console.log(sum)
-    })
+    // console.log(cart_arr)
+    let sum = cart_arr.reduce((accum, obj) => accum + obj.price, 0)
     return sum.toFixed(2)
 }
 function show_cart_item() {

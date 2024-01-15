@@ -9,34 +9,47 @@ let EmailEl = document.getElementById("Email");
 let PassEl = document.getElementById("Pass");
 let cpassEl = document.getElementById("cpass");
 
-let user_arr = []
-document.getElementById("signUpBtn").addEventListener("click", () => {
+function isValidate() {
 
+    let fname = fnameEl.value.trim()
+    let lname = lnameEl.value.trim()
+    let Email = EmailEl.value.trim()
+    let Pass = PassEl.value.trim()
+    let cpass = cpassEl.value.trim()
 
-    if (fnameEl.value.trim() == "" ||
-        lnameEl.value.trim() == "" ||
-        EmailEl.value.trim() == "" ||
-        PassEl.value.trim() == "" ||
-        cpassEl.value.trim() == "") {
+    if (!fname || !lname || !Email || !Pass || !cpass) {
 
         alert("All field is mandatory!")
-        return;
+        return false;
     }
 
-    if (PassEl.value.trim() != cpassEl.value.trim()) {
+    if (Pass != cpass) {
         alert("confirm password not match!")
-        return;
+        return false;
     }
-    //ensure unique email
+    return true
+}
+
+function isUniqueEmail() {
     let user_arr = JSON.parse(localStorage.getItem("user_arr")) || [];
     for (let obj of user_arr) {
         if (obj.email == EmailEl.value) {
             alert('Email is already used. Please use a different email.');
-            return;
+            return false;
         }
     }
+    return true
+}
+
+document.querySelector("form").addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    if (isValidate() == false) return;
+    //ensure unique email
+    if (isUniqueEmail() == false) return;
 
 
+    let user_arr = JSON.parse(localStorage.getItem("user_arr")) || [];
     user_arr.push({
         fname: fnameEl.value,
         lname: lnameEl.value,
@@ -64,7 +77,8 @@ document.querySelector("#myCart").addEventListener("click", () => {
         alert("You are not login!")
 
     } else {
-        alert(`Already Login as ${curr_user.email}`)
+        // alert(`Already Login as ${curr_user.email}`);
+        console.log(`Already Login as ${curr_user.email}`)
 
         location.href = "../cart/mycart.html"
     }
@@ -77,8 +91,8 @@ document.querySelector("#profile").addEventListener("click", () => {
         alert("You are not login!")
 
     } else {
-        alert(`Already Login as ${curr_user.email}`)
-
+        // alert(`Already Login as ${curr_user.email}`)
+        console.log(`Already Login as ${curr_user.email}`)
         location.href = "../profile/profile.html"
     }
 })

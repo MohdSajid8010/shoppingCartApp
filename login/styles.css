@@ -9,9 +9,6 @@
 
 }
 
-body{
-    /* min-height: 100vh; */
-}
 
 nav {
     background-color: black;
@@ -28,15 +25,18 @@ nav {
     top: 0;
     font-size: 17px;
 }
-nav a{
+
+nav a {
     color: white;
     text-decoration: none;
 
 }
+
 nav .brand {
     font-size: 1.5rem;
     font-weight: bold;
-  }
+}
+
 .nav-left {
     display: flex;
     flex-flow: row wrap;
@@ -58,7 +58,8 @@ button {
     font-weight: 600;
 
 }
-input{
+
+input {
     border: 2px solid black;
     outline: none;
     padding: 12px;
@@ -66,7 +67,7 @@ input{
 
 }
 
-.container1{
+.container1 {
     width: 80vw;
     margin: auto;
     margin-top: 80px;
@@ -83,22 +84,23 @@ input{
 
 #my-icon {
     display: none;
-  }
-  
-  
-  #my-icon:hover {
+}
+
+
+#my-icon:hover {
     cursor: pointer;
-  }
-  @media (max-width:600px)
-  {
-      .nav-left{
-          display: none;
-      }
-      #my-icon {
+}
+
+@media (max-width:600px) {
+    .nav-left {
+        display: none;
+    }
+
+    #my-icon {
         display: block;
-      }
-  
-      .nav-left2{
+    }
+
+    .nav-left2 {
         position: absolute;
         display: flex;
         flex-flow: column wrap;
@@ -111,17 +113,19 @@ input{
         align-items: flex-start;
     }
 
-    .container1{
+    .container1 {
         width: 90vw;
     }
-    input{
+
+    input {
         padding: 10px;
         font-size: 14px;
-    
+
     }
+
     button {
         width: 100px;
         padding: 8px 30px;
-    
+
     }
-  }
+}

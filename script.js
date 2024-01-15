@@ -6,7 +6,8 @@ import handleMenuClick from "./handleMenuClick.js";
 console.log(handleMenuClick, JSON.parse(localStorage.getItem("curr_user")), localStorage.getItem("curr_user"))
 
 if (JSON.parse(localStorage.getItem("curr_user"))) {
-    alert("You are Logged in!")
+    // alert("You are Logged in!")
+    console.log("You are Logged in!")
     location.href = "./shop/shop.html";
 }
 
@@ -28,8 +29,8 @@ document.getElementById("myCart")?.addEventListener("click", () => {
         alert("You are not login!");
 
     } else {
-        alert(`Already Login as ${curr_user.email}`);
-
+        // alert(`Already Login as ${curr_user.email}`);
+        console.log(`Already Login as ${curr_user.email}`)
         location.href = "./cart/mycart.html";
     }
 })
@@ -40,7 +41,8 @@ document.getElementById("profile").addEventListener("click", () => {
         alert("You are not login!");
 
     } else {
-        alert(`Already Login as ${curr_user.email}`);
+        // alert(`Already Login as ${curr_user.email}`);
+        console.log(`Already Login as ${curr_user.email}`)
 
         location.href = "./profile/profile.html";
     }

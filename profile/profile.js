@@ -15,16 +15,12 @@ let curr_user = JSON.parse(localStorage.getItem("curr_user"));
 
 //guard
 function z() {
-    if (!user_arr || user_arr.legth == 0) {
-        alert("Sign up first!")
-        location.href = "../signUp/sign-up.html"
-        return;
-    }
+ 
     if (curr_user) {
         fnameEl.value = curr_user.fname;
         lnameEl.value = curr_user.lname
     } else {
-        alert("curr user not found, Login First!");
+        alert("user not found, Login First!");
         location.href = "../login/login.html"
         return;
     }

@@ -18,14 +18,11 @@ let curr_user = JSON.parse(localStorage.getItem("curr_user")) || [];
 
 //protect 
 function z() {
-  if (!user_arr || user_arr.length == 0) {
-    alert("Sign up first!")
-    location.href = "../signUp/sign-up.html"
-  } else
-    if (!curr_user || curr_user.length == 0) {
-      alert("Login First!");
-      location.href = "../login/login.html"
-    }
+
+  if (!curr_user || curr_user.length == 0) {
+    alert("Login First!");
+    location.href = "../login/login.html"
+  }
 
 }
 z();
@@ -40,13 +37,13 @@ function random_color() {
   let color_arr = ["red", "blue", "green", "grey", "black"]
   let my_arr = [];
   while (my_arr.length != 3) {
-    let i = Math.floor(Math.random() * color_arr.length);
+    let i = Math.floor(Math.random() * color_arr.length);//random index
     if (!my_arr.includes(color_arr[i])) {
       my_arr.push(color_arr[i]);
 
     }
   }
-  return my_arr.sort();
+  return my_arr;
 }
 function random_size() {
   let size = ["S", "M", "L", "XL"];
@@ -125,22 +122,14 @@ function add_in_cart(el, id) {
   el.classList.add("button-anim")
   setTimeout(() => el.classList.remove("button-anim"), 800)
 
-  product_arr.forEach((obj) => {
-    if (obj.id == id) {
-      let cart_arr = localStorage.getItem("cart_arr");
+  let obj = product_arr.find((obj) => obj.id == id)
+  console.log(obj)
+  let cart_arr = JSON.parse(localStorage.getItem("cart_arr")) || [];
+  if (obj) {
+    cart_arr.push(obj)
+  }
+  localStorage.setItem("cart_arr", JSON.stringify(cart_arr))
 
-      // if it is first time
-      if (!cart_arr) {
-        cart_arr = [obj];
-      } else {
-        cart_arr = JSON.parse(cart_arr);
-        cart_arr.push(obj)
-      }
-
-      localStorage.setItem("cart_arr", JSON.stringify(cart_arr))
-    }
-
-  })
 }
 
 
@@ -364,11 +353,8 @@ document.getElementById("fold").addEventListener("click", handleFold)
 
 function handleFold() {
 
-  if (document.getElementById("fold").innerText == "unfold_less") {
-    document.getElementById("fold").innerText = "unfold_more"
-  } else {
-    document.getElementById("fold").innerText = "unfold_less"
-  }
-  document.querySelector("aside").classList.toggle("filter-leftbar");
+  let foldEl = document.getElementById("fold");
+  foldEl.innerText = foldEl.innerText == "unfold_less" ? "unfold_more" : "unfold_less"
+  document.querySelector("aside").classList.toggle("filter-leftbar2");
 
 }

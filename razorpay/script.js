@@ -13,11 +13,14 @@ let curr_user = JSON.parse(localStorage.getItem("curr_user")) || []
 
 
 function get_total_price(cart_arr) {
-  let sum = 0;
-  cart_arr.forEach((obj) => {
-    sum = sum + parseFloat(obj.price);
-  })
-  return sum == 0 ? 1 : sum; //convert price from doller to Rs (1 United States Dollar equals 82.46 Indian Rupee)
+  // let sum = 0;
+  // cart_arr.forEach((obj) => {
+  //   sum = sum + parseFloat(obj.price);
+  // })
+  let sum = cart_arr.reduce((accum, obj) => {
+    return accum + obj.price;
+  }, 0)
+  return sum == 0 ? 1 : sum * 82; //convert price from doller to Rs (1 United States Dollar equals 82.46 Indian Rupee)
 
 }
 

@@ -5,8 +5,6 @@
     margin: 0px;
     box-sizing: border-box;
     font-family: "Inter", sans-serif;
-
-
 }
 
 nav {
@@ -57,26 +55,37 @@ nav a {
 }
 
 button {
-    background-color: black;
+    background-color: rgb(63, 61, 86, 1);
     color: white;
     padding: 10px 40px;
-    border: 2px solid white;
+    border: none;
     outline: none;
     border-radius: 2px;
+    text-shadow: 1px 1px 1px grey;
+    font-size: 17px;
+    cursor: pointer;
+
+    background-color: black;
+    /* box-shadow:
+        inset -2px -2px 3px rgb(0, 0, 0),
+        inset 2px 2px 3px rgb(255, 255, 255); */
 
 }
+
+
+button:hover {
+    outline: 2px solid black;
+}
+
 
 #sighupBtn {
     background-color: white;
-    border: 2px solid black;
-    padding: 9px 38px;
-
     color: black;
     margin-left: 10px;
+    box-shadow: inset 0px 0px 8px 2px rgb(221, 220, 220);
 }
 
 .img-contaner {
-    /* border: 2px solid red; */
     position: absolute;
     top: 110px;
     right: 0px;
@@ -85,7 +94,6 @@ button {
 }
 
 img {
-    /* border: 2px solid blue; */
     width: 900px;
 
 }
@@ -93,12 +101,11 @@ img {
 @media (max-width:1120px) {
 
     .img-contaner {
-        /* border: 1px solid red; */
         top: 140px;
     }
 }
 
-@media (max-width:920px) {
+@media (max-width:930px) {
     img {
         width: 110vw;
         height: auto;
@@ -106,7 +113,6 @@ img {
     }
 
     .img-contaner {
-        /* border: 1px solid red; */
         top: 260px;
     }
 }
@@ -156,39 +162,3 @@ img {
     }
 }
 
-
-
-/*
-
-
-
-
-#my-icon {
-    display: none;
-  }
-  
-  
-  #my-icon:hover {
-    cursor: pointer;
-  }
-  @media (max-width:600px)
-  {
-      .nav-left{
-          display: none;
-      }
-      #my-icon {
-        display: block;
-      }
-  
-      .nav-left2{
-        position: absolute;
-        display: flex;
-        flex-flow: column wrap;
-        background-color: black;
-        border-bottom-left-radius: 15px;
-        right: 0px;
-        top: 60px;
-        gap: 15px;
-        padding: 20px 10px;
-        align-items: flex-start;
-    }*/

@@ -66,7 +66,6 @@ main {
 }
 
 main aside {
-  flex: 0.2;
   background-color: black;
   color: white;
   height: 100vh;
@@ -100,7 +99,7 @@ aside section li {
 }
 
 aside section li:hover,
-input:hover {
+aside section input:hover {
   cursor: pointer;
 }
 
@@ -113,15 +112,32 @@ aside section label {
   margin-left: 0.25rem;
 }
 
+/* apply_filter button */
 #apply_filter {
   width: 80%;
   margin-left: 10%;
   padding: 10px;
   margin-top: 10px;
-  border: 2px solid white;
+  border: none;
   background-color: black;
   color: white;
   cursor: pointer;
+  text-shadow: 1px 1px grey;
+  border-radius: 5px;
+  box-shadow:
+    inset -2px -2px 3px rgb(95, 95, 95),
+    inset 2px 2px 3px rgb(122, 121, 121);
+  /* -bottom */
+  transition-duration: 0.2s;
+}
+
+#apply_filter:active {
+
+  /* box-shadow:
+    inset -2px -2px 3px white,
+    inset 2px 2px 3px black; */
+  box-shadow: none;
+  transition-duration: 0.2s;
 }
 
 main-content {
@@ -131,7 +147,7 @@ main-content {
 
 main-content input {
   padding: 12px;
-  padding-left: 45px !important;
+  padding-left: 45px;
   width: 100%;
   position: relative;
   font-size: 1rem;
@@ -147,27 +163,39 @@ main-content input {
 .myIconn {
   position: absolute;
   font-size: 31px !important;
-  top: 8px;
-  left: 6px;
+  /* border: 1px solid red; */
+  width: 45px;
+  height: auto;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+
 }
 
 main-content .filters {
   display: flex;
+  flex-wrap: wrap;
   margin-top: 1rem;
   gap: 1rem;
 }
 
 main-content .filter {
-  flex: 1;
+  flex-grow: 1;
   text-align: center;
-  padding: 0.5rem 1rem;
-  border: 2px solid black;
+  padding: 0.6rem 1rem;
+  min-width: 120px;
   cursor: pointer;
+  box-shadow: inset 2px 2px 8px 1px #5a5a5a;
+
+  border-radius: 10px;
+  text-shadow: 1px 1px 3px rgb(78, 77, 77);
 }
 
 main-content .active {
   background-color: black;
   color: white;
+  box-shadow: inset -1px -1px 10px 2px rgb(128, 128, 128);
 }
 
 .grid-container {
@@ -187,12 +215,11 @@ main-content .active {
   flex-flow: column wrap;
   justify-content: space-between;
   transition-duration: .5s;
-
+  box-shadow: rgb(90, 90, 90) 0px 0px 40px 15px inset;
 }
 
 .item:hover {
   transform: scaleX(1.01) scaleY(1.01);
-  box-shadow: 0px 0px 30px grey;
   cursor: pointer;
 
 }
@@ -251,7 +278,7 @@ main-content .active {
   cursor: pointer;
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
-  transition-duration: 0.5s;
+  transition: all 0.5s;
 }
 
 .button-anim {
@@ -284,7 +311,6 @@ main-content .active {
 .item button:hover {
   background: linear-gradient(to right, rgb(0, 0, 0), grey, rgb(4, 4, 4));
   color: white;
-  font-weight: 600;
 }
 
 i {
@@ -295,10 +321,10 @@ i {
 }
 
 img {
-  width: 95%;
+  width: 98%;
   height: 240px;
   align-self: center;
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 
@@ -311,8 +337,8 @@ img {
   top: 0px;
   bottom: 0px;
   z-index: 11;
-  background-color: rgb(110, 104, 104);
-  opacity: 0.6;
+
+  background-color: rgb(110, 104, 104, 0.2);
 
   display: flex;
   justify-content: center;
@@ -328,26 +354,26 @@ img {
 
 }
 
+/* loader */
 .pending {
   /* display: none; */
   width: 60px;
   height: 60px;
-  border: 4px solid rgb(188, 188, 236);
+  border: 7px solid rgb(110, 104, 104, 0.2);
+
   border-radius: 50%;
-  border-left: 7px solid blue;
+  border-left: 7px solid black;
   animation: loader .6s linear infinite;
-
-
   /* animation: loader 1s 2s  linear infinite;  name,duration,fun,count*/
 
 }
 
 @keyframes loader {
-  from {
+  0% {
     transform: rotate(0deg);
   }
 
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
@@ -357,7 +383,7 @@ img {
   color: red;
   background-color: aliceblue;
   font-weight: 600;
-  border: 2px solid red;
+  /* border: 2px solid red; */
   padding: 20px;
 }
 
@@ -379,35 +405,12 @@ img {
   }
 }
 
-@media (max-width:720px) {
-  .grid-container {
-
-    display: grid;
-    /* grid-template-columns: 1fr; */
-
-  }
-
-  .filters {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
 @media (max-width:600px) {
   .grid-container {
-
     grid-template-columns: 1fr;
-
   }
 
-  .filters {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .item1 {
-    grid-column-start: 1;
-    grid-column-end: 3;
-  }
 }
 
 #my-icon {
@@ -471,10 +474,18 @@ img {
 
   .filter-leftbar {
     display: block;
-    top: 57px !important;
+    top: 67px !important;
     width: 50vw;
     z-index: 29;
     top: 0;
+    transform: translateX(-100%);
+    transition: all 1s;
+  }
+
+  .filter-leftbar2 {
+
+    transform: translateX(0%);
+
   }
 
   #fold {
